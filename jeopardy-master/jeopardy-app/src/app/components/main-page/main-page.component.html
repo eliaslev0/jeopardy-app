@@ -1,0 +1,50 @@
+<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style lang="postcss" scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
+    </style>
+</head>
+<body>
+  
+  <div>
+  <div class="container">
+    <div class="row">
+        <div *ngFor="let category of categories" class="col mb-3 mt-4">
+            <div class="card text-center border-3" style="border-color: #000; border-radius: 0; height: 100%">
+                <div class="card-body" style="box-shadow: 7px 7px 0px 1px rgba(135, 107, 107, 0.2), inset 4px 4px rgb(255, 255, 255); background-color: #f4dfe5; color: rgb(0, 0, 0); border-color: #000; font-family: 'Barlow Semi Condensed', sans-serif; font-weight: bold" onclick="">
+                  {{ category }}
+                </div>
+              </div>
+        </div>
+    </div>
+    <div *ngFor="let row of rows" class="row">
+        <div *ngFor="let category of categories" class="col">
+          <div id="bottom-cards" class="card text-center mb-3 p-2 border-3" style="box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2), inset 4px 4px rgb(255, 255, 255);background-color: rgb(248, 248, 248); color: #000000; border-color: #000; font-family: 'Barlow Semi Condensed', sans-serif; border-radius: 0">
+                <div class="card-body">
+                  <a class="stretched-link" (click)="setText($event.target, row, category)" style="text-decoration: none; color: #000">{{row * 100}}</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div style="margin: auto; width: 50%; text-align: center"><app-players></app-players></div>
+
+</div>
+</body>
+</html>
+</div>
+
+  
+
+
+
+
+
+
+

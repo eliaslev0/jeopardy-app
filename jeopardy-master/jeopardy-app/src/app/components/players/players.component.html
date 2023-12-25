@@ -1,0 +1,185 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  id="setTeamsButton"
+  class="btn btn-outline-dark"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+  style="
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+    border-radius: 0;
+    border-width: 3px;
+    box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+  "
+>
+  Set teams
+</button>
+
+<div
+  id="teamcard1"
+  class="card text-center mb-3 p-2 border-3 mx-3"
+  style="
+    box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2),
+      inset 4px 4px rgb(255, 255, 255);
+    background-color: #f4dfe5;
+    color: #000000;
+    border-color: #000;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    border-radius: 0;
+    display: none;
+  "
+>
+  
+  <div class="card-body">
+    
+    <a class="mb-2" style="text-decoration: none; color: #000; display: block">Team 1</a>
+
+    <button type="button" (click)="subtractPoints1()" class="btn btn-outline-dark py-0 px-2 mx-1" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">-</button>
+    
+    <div class="card px-3 py-2" 
+    style="border: 3px solid black; border-radius: 0; display: inline"
+    >{{ team1Points }}</div>
+
+    <button type="button" (click)="addPoints1()" class="btn btn-outline-dark py-0 px-2 mx-1" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">+</button>
+
+  </div>
+
+</div>
+
+<div
+  id="teamcard2"
+  class="card text-center mb-3 p-2 border-3 mx-3"
+  style="
+    box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2),
+      inset 4px 4px rgb(255, 255, 255);
+    background-color: #f4dfe5;
+    color: #000000;
+    border-color: #000;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    border-radius: 0;
+    display: none;
+  "
+>
+  
+  <div class="card-body">
+    
+    <a class="mb-2" style="text-decoration: none; color: #000; display: block">Team 2</a>
+
+    <button type="button" (click)="subtractPoints2()" class="btn btn-outline-dark py-0 px-2 mx-1" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">-</button>
+    
+    <div class="card px-3 py-2" 
+    style="border: 3px solid black; border-radius: 0; display: inline"
+    >{{ team2Points }}</div>
+
+    <button type="button" class="btn btn-outline-dark py-0 px-2 mx-1"(click)="addPoints2()" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">+</button>
+
+  </div>
+
+</div>
+
+<div
+  id="teamcard3"
+  class="card text-center mb-3 p-2 border-3 mx-3"
+  style="
+    box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2),
+      inset 4px 4px rgb(255, 255, 255);
+    background-color: #f4dfe5;
+    color: #000000;
+    border-color: #000;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    border-radius: 0;
+    display: none;
+  "
+>
+  
+  <div class="card-body">
+    
+    <a class="mb-2" style="text-decoration: none; color: #000; display: block">Team 3</a>
+
+    <button type="button" (click)="subtractPoints3()" class="btn btn-outline-dark py-0 px-2 mx-1" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">-</button>
+    
+    <div class="card px-3 py-2" 
+    style="border: 3px solid black; border-radius: 0; display: inline"
+    >{{ team3Points }}</div>
+
+    <button type="button" class="btn btn-outline-dark py-0 px-2 mx-1"(click)="addPoints3()" style="background-color: #fff; display: inline; border: 3px solid black; border-radius: 0">+</button>
+
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          How many teams do you want?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      
+      
+      <div class="modal-body">
+        <div class="btn-group" data-toggle="button" role="group"  aria-label="Basic example">
+            <button (click)="setPlayers(1)" type="button" class="btn btn-primary mx-3 px-3"style="
+            border-radius: 0px;
+            border: 3px solid black;
+            border-width: 3px;
+            box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+          " data-mdb-color="dark">1</button>
+            <button (click)="setPlayers(2)" type="button" class="btn btn-primary mx-3 px-3"style="
+            border: 3px solid black;
+            border-width: 3px;
+            box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+          " data-mdb-color="dark">2</button>
+            <button (click)="setPlayers(3)" type="button" class="btn btn-primary mx-3 px-3"style="
+                border-radius: 0px;
+                border: 3px solid black;
+                border-width: 3px;
+                box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+              " data-mdb-color="dark">3</button>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          data-bs-dismiss="modal"
+          style="
+            border-radius: 0;
+            border-width: 3px;
+            box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+          "
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="loadPlayers()"
+          data-bs-dismiss="modal"
+          style="
+            border-radius: 0;
+            border-width: 3px;
+            box-shadow: 4px 4px 0px 1px rgba(126, 126, 126, 0.2);
+          "
+        >
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
